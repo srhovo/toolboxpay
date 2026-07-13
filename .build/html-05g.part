@@ -1,0 +1,26 @@
+'));
+});
+document.querySelectorAll('[data-qr]').forEach((button) => {
+button.addEventListener('click', () => openQr(button.dataset.qr));
+});
+document.querySelectorAll('[data-close]').forEach((button) => {
+button.addEventListener('click', () => closeSheet(button.dataset.close));
+});
+document.querySelectorAll('.sheet').forEach((sheet) => {
+sheet.addEventListener('click', (event) => { if (event.target === sheet) closeSheet(sheet.id); });
+});
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && activeSheet) closeSheet(activeSheet.id); });
+configureWechatButtons();
+document.getElementById('openWechatPay').addEventListener('click', () => {
+if (environment === 'wechat') {
+openQr('wechat-pay');
+return;
+}
+requestWechatOpen('wechat-pay', getWechatPageUrl('wechat-pay'), '页面链接已复制');
+});
+document.getElementById('openWechatFriend').addEventListener('click', () => {
+if (environment === 'wechat') {
+openQr('wechat-friend');
+return;
+}
+requestWechatOpen('wechat-friend', getWech
