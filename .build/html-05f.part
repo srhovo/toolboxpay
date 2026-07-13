@@ -1,0 +1,28 @@
+('visibilitychange', markHidden);
+window.addEventListener('pagehide', markPageHide, { once: true });
+window.setTimeout(() => {
+document.removeEventListener('visibilitychange', markHidden);
+if (!switchedAway && document.visibilityState === 'visible') openSheet('wechatGuide');
+}, 1450);
+location.href = WECHAT_SCHEME;
+}
+function retryWechatOpen() {
+if (!isMobile) {
+showToast('当前设备无法直接唤醒手机微信');
+return;
+}
+showToast('正在再次尝试打开微信');
+location.href = WECHAT_SCHEME;
+}
+function configureWechatButtons() {
+const payButton = document.getElementById('openWechatPay');
+const friendButton = document.getElementById('openWechatFriend');
+const codeButton = document.getElementById('wechatCodeButton');
+if (environment === 'wechat') {
+payButton.textContent = '查看微信收款码';
+friendButton.textContent = '查看微信名片码';
+codeButton.textContent = '复制付款口令';
+}
+}
+document.querySelectorAll('[data-copy]').forEach((button) => {
+button.addEventListener('click', () => copyText(button.dataset.copy || '', button.dataset.success || '已复制
