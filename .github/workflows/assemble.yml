@@ -1,0 +1,41 @@
+name: Assemble toolboxpay
+
+on:
+  push:
+    paths:
+      - 'parts/**'
+      - '.github/workflows/assemble.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Assemble final single-file HTML
+        shell: bash
+        run: |
+          cat parts/00.part > index.html
+          base64 -d parts/01.b64 >> index.html
+          base64 -d parts/02a.b64 >> index.html
+          base64 -d parts/02b.b64 >> index.html
+          base64 -d parts/03a.b64 >> index.html
+          base64 -d parts/03b.b64 >> index.html
+          echo '290eb017f0bb8b98bd2b274a542a8bab5eabb5de4beb6d9e73b67c27b70cdf65  index.html' | sha256sum -c -
+
+      - name: Commit final page
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m 'Publish toolboxpay final'
+          git push
