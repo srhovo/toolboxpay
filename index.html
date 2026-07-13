@@ -1,1 +1,286 @@
-<!doctype html><meta charset="utf-8"><title>toolboxpay</title><p>部署中…</p>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#eef7ff"><meta name="color-scheme" content="light"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="toolboxpay"><title>toolboxpay · 下雪支付与名片</title><style>:root{color-scheme:light;--ink:#2d3445;--muted:#6f7a8d;--soft:#96a2b5;--line:rgba(62,83,112,.10);--panel:rgba(255,255,255,.76);--shadow:0 24px 64px rgba(83,115,154,.13);--shadow-soft:0 14px 38px rgba(83,115,154,.095);--radius-xl:34px;--radius-lg:28px;--radius-md:18px;--sky-1:#edf7ff;--sky-2:#d8ebff;--sky-ink:#4d78c7;--sky-deep:#466fc0;--sky-deep-2:#5b86d7;--mint-1:#ebf8f4;--mint-2:#d8f0e8;--mint-ink:#438974;--mint-deep:#3f8873;--mint-deep-2:#55a08b;--peach-1:#fff3ed;--peach-2:#ffe1d5;--peach-ink:#ad6957;--peach-deep:#ae6552;--peach-deep-2:#c27a66;--lilac-1:#f5f1ff;--lilac-2:#e6ddfb;--lilac-ink:#7761ae;--lilac-deep:#7058aa;--lilac-deep-2:#876fc0}*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{margin:0;min-height:100vh;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:radial-gradient(circle at 14% 5%,rgba(211,233,255,.92),transparent 30%),radial-gradient(circle at 91% 18%,rgba(225,241,255,.94),transparent 33%),radial-gradient(circle at 83% 82%,rgba(232,222,252,.58),transparent 27%),radial-gradient(circle at 8% 88%,rgba(255,225,215,.46),transparent 25%),linear-gradient(158deg,#f7fbff 0%,#eef7ff 45%,#f8f7ff 76%,#fff9f6 100%);text-rendering:optimizeLegibility}body::before,body::after{content:"";position:fixed;z-index:-1;border-radius:999px;filter:blur(18px);pointer-events:none}body::before{width:260px;height:260px;left:-132px;top:34%;opacity:.58;background:#cfeaff}body::after{width:300px;height:300px;right:-168px;top:55%;opacity:.42;background:linear-gradient(145deg,#d9edff,#eadfff)}body.sheet-open{overflow:hidden}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;border:0;cursor:pointer}a{color:inherit;text-decoration:none}.page{width:min(780px,100%);margin:0 auto;padding:calc(24px + env(safe-area-inset-top)) 18px calc(52px + env(safe-area-inset-bottom))}.hero{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.9);border-radius:38px;padding:29px;background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(243,249,255,.69)),linear-gradient(155deg,rgba(212,233,255,.55),rgba(255,255,255,.12));backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:var(--shadow)}.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.3),transparent 42%)}.hero::after{content:"";position:absolute;width:285px;height:285px;right:-102px;top:-148px;border-radius:50%;background:linear-gradient(150deg,rgba(193,224,255,.84),rgba(226,215,255,.62));box-shadow:inset 0 0 0 1px rgba(255,255,255,.48)}.profile{position:relative;z-index:1;display:grid;grid-template-columns:80px 1fr;align-items:center;gap:19px}.avatar{width:80px;height:80px;border-radius:27px;object-fit:cover;box-shadow:0 15px 34px rgba(56,76,105,.19);border:4px solid rgba(255,255,255,.91)}.name-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px}h1{margin:0;font-size:clamp(30px,7vw,40px);line-height:1.05;letter-spacing:-.04em;font-weight:780}.verified{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;color:#617aa8;background:rgba(226,239,255,.88);border:1px solid rgba(255,255,255,.72);font-size:11px;font-weight:750;box-shadow:0 6px 16px rgba(81,112,156,.08)}.hero-sub{margin:9px 0 0;max-width:420px;color:var(--muted);font-size:14px;line-height:1.65}.env-bar{position:relative;z-index:1;margin-top:25px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 16px;border-radius:20px;background:rgba(248,252,255,.72);border:1px solid rgba(255,255,255,.88);box-shadow:inset 0 1px 0 rgba(255,255,255,.86),0 9px 22px rgba(86,118,157,.06)}.env-title{font-size:11px;color:var(--soft);letter-spacing:.02em}.env-value{margin-top:3px;font-size:14px;font-weight:760;color:#34445c}.env-dot{width:10px;height:10px;flex:0 0 auto;border-radius:50%;background:#77cdb5;box-shadow:0 0 0 6px rgba(119,205,181,.16),0 0 18px rgba(119,205,181,.25)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:36px 6px 17px}.section-head h2{margin:0;font-size:21px;letter-spacing:-.025em}.section-head p{margin:0 0 2px;color:var(--soft);font-size:12px;text-align:right}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.service-card{--tone-1:#fff;--tone-2:#f7f7f7;--tone-ink:var(--ink);--tone-deep:#4d596c;--tone-deep-2:#667387;position:relative;display:flex;min-width:0;min-height:294px;overflow:hidden;flex-direction:column;padding:23px;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,.9);background:linear-gradient(125deg,rgba(255,255,255,.54),transparent 46%),linear-gradient(148deg,var(--tone-1),var(--tone-2));box-shadow:var(--shadow-soft);transition:transform .22s ease,box-shadow .22s ease;isolation:isolate}.service-card::before{content:"";position:absolute;z-index:-1;width:170px;height:170px;left:-108px;top:-103px;border-radius:50%;background:rgba(255,255,255,.48)}.service-card::after{content:"";position:absolute;z-index:-1;width:172px;height:172px;right:-77px;bottom:-88px;border-radius:50%;background:rgba(255,255,255,.39);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}.service-card:active{transform:scale(.988)}.service-card.is-recommended{box-shadow:0 22px 54px rgba(81,117,166,.16);border-color:rgba(255,255,255,.98)}.service-card.is-target{outline:3px solid rgba(255,255,255,.9);box-shadow:0 0 0 5px rgba(91,134,215,.13),var(--shadow)}.mint{--tone-1:var(--mint-1);--tone-2:var(--mint-2);--tone-ink:var(--mint-ink);--tone-deep:var(--mint-deep);--tone-deep-2:var(--mint-deep-2)}.sky{--tone-1:var(--sky-1);--tone-2:var(--sky-2);--tone-ink:var(--sky-ink);--tone-deep:var(--sky-deep);--tone-deep-2:var(--sky-deep-2)}.peach{--tone-1:var(--peach-1);--tone-2:var(--peach-2);--tone-ink:var(--peach-ink);--tone-deep:var(--peach-deep);--tone-deep-2:var(--peach-deep-2)}.lilac{--tone-1:var(--lilac-1);--tone-2:var(--lilac-2);--tone-ink:var(--lilac-ink);--tone-deep:var(--lilac-deep);--tone-deep-2:var(--lilac-deep-2)}.card-top{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.icon-box{display:grid;place-items:center;width:51px;height:51px;border-radius:18px;color:var(--tone-ink);background:rgba(255,255,255,.68);box-shadow:inset 0 0 0 1px rgba(255,255,255,.78),0 8px 20px rgba(75,95,126,.07)}.icon-box svg{width:27px;height:27px}.tag{min-height:27px;display:inline-flex;align-items:center;padding:6px 11px;border-radius:999px;color:var(--tone-ink);background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.7);font-size:10px;font-weight:800;letter-spacing:.04em}.tag.recommend{display:none}.is-recommended .tag.default{display:none}.is-recommended .tag.recommend{display:inline-flex}.service-card h3{position:relative;z-index:1;margin:25px 0 8px;font-size:23px;line-height:1.25;letter-spacing:-.03em}.service-card .desc{position:relative;z-index:1;margin:0;min-height:44px;color:rgba(45,52,69,.66);font-size:13px;line-height:1.68}.account{position:relative;z-index:1;margin-top:13px;color:var(--tone-ink);font-size:12px;font-weight:760}.actions{position:relative;z-index:1;display:grid;gap:9px;margin-top:auto;padding-top:24px}.btn{min-height:49px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:16px;padding:0 15px;font-size:13px;font-weight:760;transition:transform .16s ease,opacity .16s ease,background .16s ease,box-shadow .16s ease}.btn:active{transform:scale(.975);opacity:.88}.btn.primary{color:#fff;background:linear-gradient(135deg,var(--tone-deep),var(--tone-deep-2));box-shadow:0 11px 24px rgba(65,89,126,.16)}.btn.secondary{color:var(--tone-ink);background:rgba(255,255,255,.67);border:1px solid rgba(255,255,255,.8);box-shadow:inset 0 1px 0 rgba(255,255,255,.74)}.btn-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.note-card{margin-top:18px;padding:20px 21px;border-radius:23px;border:1px solid rgba(255,255,255,.88);background:linear-gradient(145deg,rgba(255,255,255,.75),rgba(238,247,255,.68));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:var(--shadow-soft)}.note-card strong{display:block;margin-bottom:7px;font-size:13px}.note-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.75}.footer{padding:32px 8px 6px;text-align:center;color:var(--soft);font-size:11px;line-height:1.8}.sheet{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom));background:rgba(45,58,78,.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:opacity .24s ease}.sheet[hidden]{display:none}.sheet.show{opacity:1;pointer-events:auto}.sheet-panel{width:min(560px,100%);max-height:min(86vh,820px);overflow:auto;border-radius:32px;background:linear-gradient(180deg,#fcfeff,#f8fbff);border:1px solid rgba(255,255,255,.92);box-shadow:0 28px 78px rgba(42,58,82,.27);transform:translateY(18px) scale(.985);transition:transform .24s ease}.sheet.show .sheet-panel{transform:translateY(0) scale(1)}.sheet-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:19px 20px 15px;background:rgba(250,253,255,.93);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}.sheet-title{min-width:0}.sheet-title h2{margin:0;font-size:18px}.sheet-title p{margin:4px 0 0;color:var(--soft);font-size:11px}.close{width:38px;height:38px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%;color:var(--muted);background:#eef5fb;font-size:21px}.qr-wrap{padding:18px;background:linear-gradient(145deg,#eef7ff,#f8fbff)}.qr-image{display:block;width:100%;max-height:64vh;object-fit:contain;border-radius:21px;background:#fff;box-shadow:0 12px 32px rgba(65,88,119,.1);-webkit-touch-callout:default;user-select:auto}.sheet-foot{display:grid;gap:11px;padding:16px 19px 20px}.sheet-hint{margin:0;color:var(--muted);font-size:12px;line-height:1.7;text-align:center}.sheet-foot .btn{width:100%;color:#fff;background:linear-gradient(135deg,#4a6f9f,#6387b8)}.guide-body{padding:20px}.guide-lead{margin:0 0 16px;color:var(--muted);font-size:13px;line-height:1.75}.steps{display:grid;gap:11px}.step{display:grid;grid-template-columns:32px 1fr;align-items:start;gap:12px;padding:14px;border-radius:19px;background:linear-gradient(145deg,#f1f7ff,#f8fbff);border:1px solid rgba(216,235,255,.7)}.step-num{width:31px;height:31px;display:grid;place-items:center;border-radius:11px;color:#5273a7;background:#dcecff;font-size:12px;font-weight:800}.step h3{margin:1px 0 5px;font-size:13px}.step p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.guide-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.guide-actions .btn:first-child{color:#52709b;background:#e7f1fc}.guide-actions .btn:last-child{color:#fff;background:linear-gradient(135deg,#4f6f9a,#6689b9)}.toast{position:fixed;z-index:80;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));transform:translate(-50%,12px);max-width:calc(100% - 32px);padding:12px 18px;border-radius:999px;color:#fff;background:rgba(45,54,70,.94);box-shadow:0 14px 36px rgba(38,47,62,.23);font-size:12px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}.toast.show{opacity:1;transform:translate(-50%,0)}@media (hover:hover) and (pointer:fine){.service-card:hover{transform:translateY(-3px);box-shadow:0 22px 54px rgba(81,110,148,.14)}.btn:hover{box-shadow:0 13px 28px rgba(65,89,126,.18)}}@media (max-width:620px){.page{padding:calc(16px + env(safe-area-inset-top)) 13px calc(42px + env(safe-area-inset-bottom))}.hero{padding:23px 21px;border-radius:32px}.profile{grid-template-columns:70px 1fr;gap:15px}.avatar{width:70px;height:70px;border-radius:23px}.hero-sub{font-size:13px}.env-bar{margin-top:22px}.section-head{margin:31px 5px 15px}.grid{grid-template-columns:1fr;gap:14px}.service-card{min-height:282px;padding:21px;border-radius:27px}.service-card h3{margin-top:21px}.actions{padding-top:22px}.btn-row{grid-template-columns:1fr 1fr}.note-card{margin-top:16px;padding:19px}.sheet{padding-left:10px;padding-right:10px}}@media (max-width:370px){.btn-row,.guide-actions{grid-template-columns:1fr}.profile{grid-template-columns:60px 1fr}.avatar{width:60px;height:60px;border-radius:20px}.hero{padding:20px 18px}.verified{padding:5px 8px}}@media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto !important;transition:none !important;animation:none !important}}</style></head><body><main class="page"><header class="hero"><div class="profile"><img class="avatar" src="data:image/webp;base64,UklGRsoSAABXRUJQVlA4IL4SAAAQTwCdASqgAKAAPmEokUakIiGhKfOsSIAMCWcAxJSgyAju+o3cT3cxKl+rZ50+dD55KluI/m355/m+gHhLwEXp/x7MXv08Mfsx7AHEe+rewP/Rf8R6RWkV699hjdVT0f+oynzbeHMKRknFYUFGiDTuX1qavCvEjFvumMWi97OmoIxK8IODhtl+4lKdU9xEEmugIfP7beV8Mw/80Vitqc373ILZZmbxU53lTRZJhBBHaxd1WKJHSQ0ig/bYg3RJRPFKOR/QysPwgmsGwKAfBay6lUatK5HbC6Ppxm6p319uir7DG1PEOMXKyDh846MG8bIocFZHF0MsRy+97A3VN+64F34Wjo2XOHFkq1fHUczpDL5sptl6aV/xXG69fgLnlNzhCrjM8GvMTU45acvn4EPfTcX/CrKsthi/hQU0UL5TDEjuufOx4MXp6soMcbUVwsE0x0vApCcMfAQsXGtq5uwyIVNT6qnjNuBswbyITP+ayPSbE7zvCKFjm5H47G+/6A3mIbdBequQ8L3lbjFvVjKds9B6BSz3tE6sYGxpvRnammhacdoJV+ULEGGV2MyP/ZlETJTNcL+4b8uzrQW5fOaBnn4pEiF7T7lsdePyn/iYYn9SA4BJq6g5vwczr/xPVXQGP23BrtAKI+/JIA4BKb+f8vJTQwq0wsK0LXlKY1g+CEd7GHjVhP961GHIAUSwyjr4dFgJV7ZMG0wCAnkQgtYpxWNFs1DQ/kDPom3tQ0oi+DLwD08s3o+s/HezLl0b75RW3AE0/6xj2jMLVXrfx0FXrxXmhgH4tRkcDih8GRZY/Ml87ZJNhaiOC73Fno+Tv8A0pT8dX7CItXTjAfY3jNnbAAD++g3MgRzp+U+rbAsbDStPdrh8mt5diaNLCpLrHkSadb+qo0LCHv1TEPTI4Sy4IJyul6YzToMkGhNrcpkgL8A7w7wxBbS5UN6c5bRtXHEDnKFz59kBughw5j9cZ2IiswBhOmkzcwAS4AMGoMda4zMEauQ17EPgV5XVRXU+mYh7cegZvV3bQNqVmLNN3Lb0h9YiSIMpkJGI7NWZ+V6WTWmETSwFj21L9F8VWUsnRa04pGPVULZUGOudZmxvv74ecB1Bm0jQM2DhEGmgIexxsAGec9oqoE61QCX1LZFViEu4lSXaGalnSMmpD72P+BKC/l6MhH+worQi6YmPqaTvQHoc3GEQhHTnIfRpH26ieqP+fr3omGT14Kn4b//BdzA2Ngxe3eYq3/WEmqwt8jqu0M/jPw2wH8RZNRqE5EWguiXC6lkClibmqlPuv88TCpSsIBtp9QV84zz9AhTlb4Bd1aTapHqzA/nmFdklvZDoe+yiY/17Zaqe22wO1W7k4ndHRl8sKVWDXhK8Qzbl5npFlBJ/P/H37sqXyb5/ObmMdvbhSbN0ccgqEgYTg6xKBTzFzUNQCvvIbtl7DucUE0rMoKsZWo/hAEQdlQiRR8p/pQbCoXrXIdMBzjKm2uXv8BFZ+HSxshGvpIe3SHD8eNqAcbSCPYjM3tvcg1yHdauQUWvUU5iwVHfhu5ZrYc6qC2ErQ1SOyUriN5sfNhhLfJdTMdmNRz+TvgtxexJkmAOeNkOmBIS1yYouzAhFf58qtClqa22B8cRlg9/dlwwDMaeaC48RhjcUEjwRIFc/JV4X2dnWsCEEvPwW7cBkn0YNgnKOI3yae89yNfJlNM10GEub0aQ3KAtfkYOMfwMxI3YH/EAl9+1YPS1+E+OsNNLu3U2bnetfrq4oQDoOzAETslzQEPvqZSto3mu1EhIGvXoss7espTagMI5ZYH5MbqKygJ3Jbf7fJC6hNff7WEyvf+Zqx7+dqx5ypfj5TzEGDJrEdCep6GryvX5OVYR8raxSfCoFze+7Axn+JHkKqps4GfCvBaC+efSrXoVWdCCX/8LR/inmP+O5p0ffutcjYKj/vxVfsWwX2OEtZulF1iAQB9VxhuEOJP7jlGud7e2fW17K5DL5LHyg6NddczRUjPOQxlNfgnPzhfr89NxuU/Vsp+5QJ/+J2roAUjrCFsPk2kZubjaWx/6ZAf0/6ffr9Oyc3FKL/jQx0wmiGd6aS77PIgQXvd7mZ3KfmiytZ0VrROYVmxzTydfhAHFG2kEFfgcgOqyzaOceW4A2kkFeFNrflGNphuOZfMacmbbxUW5AzPzGwBdX3xh+UHGE1m+YwAZ5lW2f9XuDKWp8MsmVFRbdqIfUPxpuRm+eAEZ6zvDUN7Z3hYPbuGMD+dZX4o12zx5jHjrynsQn5s/1H2kPL/X2yJ9BhSc/XvN5eE1QsS5cwEIoRPwJXSYhL6T/tcoh67DfLa8KDrRrUnR8EKmlmkgRsJRy6uWiAKQTGRgjBx12S5qmJAwk1KvRlmTw7saaw4Q+tbyLdDwUxopDm+sca5CYp4Js7IUW1tx/b8oFpBOgdM9tHtDgAKaOQ6YfrxNhycgotM3jmj2oS5iwBzI0n6wCqwq8g2unx1QYwyqaVo5K2YVNhn4zA/i7JUav+LnbK+s13BZeuUnsjYEqKiQiBdGpe03bKbtnlpwhuzubeJ++zaZuTPQSJnXB/ppAqzhPCpDFT5Fi/3kdCfcG+tdfYEEbaqhEePhRFPgf3WAU512NOVmqFKzsc+/KjpCCDqcSGQqvvfYstF7PO8Zv1ZCcT5xQpIuoOgkxZJoRTeP1wAEaoqRCXP5RKvE1n0IuCsDpIOGssNfWZzj3JSS8Ngu/ArC0x1WrvLiloqtdebeIhfSM0W6J2oNePHJAD7I3sbVAhRbicbTfL+k2H9ixswHHaQAw6wHoEfDtb5BOZ+5uujdB3wwleuRIq9SDy4+1hv1Spsxth+FLgc9/EOC7FsZaqjerLtsMigdbla5mOvwjRsH5pq5m8AVXZ/pIC0Lz7nktDSU1alUOVxPIWXwCiWKICo9VUhrhiC8AMC/c+ad4W2vnZ4aA/cyw6pg7WkVRGHG6xH2+GyJwIpvX8IhZnXxuv5HDuu/Jq56P5gOg2YTpi/vniXhgqOhgjyK4yZraAAqEHAeVxJ+cFEmLDFLuryK67BoFEGxlmASvYULcB5UAVs6qnBqSG7ahNMEtM0C6PCJ6JBMbU0+ngI80tunSxFH/NlFrHnUvdwznW8frHIaoiVZq6HqZEeVlE4T0oyz+gxcDq6vDkOO34T2DKh5J3cPcBAqCukmFXdztUi1nquy5s08badF0sfkToxOmjDq/3t3eI807VN3U1gsXJOSiptu3w3w986WrhowN7/3vGQxywGVQXCW57GMxU6osKJUeN2gPpaxzKuDJzCsokdV2HjOTruX3K8P9fFd8oopX4CkgsVptxaD0jr9qUgHERdcGAxL9zDT/84M9w6yXFXPMABm0OZb/sESgZc7UtNa+h+trkf+Bzl1ljoJgENIbJtKkTWg3d/9U+1QmUS6LHd5XMUpFdtMAZDYad30kL+R529ZECcBf28KFGZI/XR2jC4WoirTtFElbLoZDZDmhYZeUWUeM7HVVVjF4oZE1HtnfWFEI6f+kE+zPB47xhlQuO9aTzTZrnKukPxt/y/c+6LKh2x/IdaUCmzk0ZqPKbdQp46QzUl0rYPzobBSBu6/W1fFPWzzLQxpg784VBmr0g0SjeTupA7Hm6YpJXvf2DMdN1w1RTT6U7yuH+bAr4M6JCXQX4KZ9lZZwADh47HDLhN8/G3UfDleq+kpRwph7D0qRvYytHCoIZ12bFqDd1KkJy/ooD4P7/OIkAGkp9mrg2PLAL7/g7u1KiRQp5bwzFXZnxWn6PMMtMkNhETbAzD4MohCvOWCW+0EEEfAzI74TeWFZD4R/zxm/KTxQECvhm6CLnxld+DfGykOLbXOI68QKE1gswI28QMh1ZzzaL+qIOqz05zoa/mGE+H9DYD7D5RJ6RXa+qGv/rocFoP6a5mpn/lPXXqHinHFsFZlkXTvIJW9XxTj5CvwtOZ17BHTq5H+CDhXj7w3A2nmiPN8LrBe9q1OCVJsMaL3Uh2ut+bnuouzQrGJWLgG1YcO/VtQLUOe3NTfEmtge054NUQ6vv4B4q5XymuqQHV4fRigAduL0Ph3EszUqrp/H3BuNdv6f8AN3UjTw80CsgqKWAkePtKqGvIbJK5NjC9jrV3kuZrwNdH85f5bcK4UgAgp+jOjTpyEQBFzGrg9UV5JXE0YEX38Xj/f35Wi4E9CgbRMWIDOfCYJZgiIoGHTbOSN0Ymoq8BXgMu0xaP13CymypUO3d+vLTP6CEDPQ33WaGeBbijgZMFBEmYN6rM2OrgmROnaaLB7DRwcUcFf9OanC4YbYxGxdF4j86bMFmSmy1k5QnWhC1NlhMTNIFOEiY5TSaRZX9UCbLqe8/0+zmohQW3uHvLHLVKQ3cC1Q6xM00BnA5Q23QSvL/aL4UudBVupadBmB+do4bJ0gTJQIO1jwQK0sn4G5UVRWDkIrhLYaYQ7Hn5TuykmD4IiBkkaqQh7JHTjVXDzVrLhMlKJqqk9/pu+uEczDxPn0sALowUsjOJ6w8++HHnIGH98IAY9D2buulFYBCd7J1dJaJwglZXzn0jZe+g6M2685uqFR3zpCf5TEXbtumdOwyyh+MAeuXJN8P8Xz8bAcLqXg0EXbKDfb7ONzHKZ70JX3RViyXOxqpy4BrQInzo9mRycbtl1DdRdj8KMtJtkuIawUlAysvRDFfxa/XvmHmMskxyKi3dvgb0OAhMwDSSwu/u7ZL2dbg+fUDqiVW/Ej/R1NC300WqbzDytRLAxgdoFCO0k2PckZPEplckRcd0wHd4ITqjIMeQV5iHC6gBFGqD5hkShEtz4ovvzK5SV0hI7bcx2FHKS49+4/5kLPiPAcvdrE/Lule+iI8Qju0z/DhYl6vJ5i3B2gK52OVl3Uh+0v2V5s4DBGMGh7MJJVweomOH1Vl/Z4h8a9cglZlmBEFSj7W2OD/3+5pgov9Q0rRTE9mMrHhZzOyTUd0YhjsHoDgMTclJY4+GDcn36QXKHG+xYYNCJH6Tl0Ec5Gcd8HS6DPwZquU5DWCK0yFQvROgjmxPAn5qDQBTrJLUUVxlpYo2d5tyqy7dlDcayh5NNyQz125iA3nA2bSW5PW/SSTP4wBISLW+H/GAUZ6YapFBiTecWka2cIerkQsrPROfcFLR3A5ATr3iTtojlUS3fBFwc1UJ8HzSFG3SYWMJEofSVhjrZRio108ScxIsih2Xiaz4mIUy2Hu311hNinPoam9F/xX01298jBgK+qRmBW7frtwi/2ljqPbZ/FkRm+RVTKHqf+0zvo6T68wlm1wSjpQTpQsCehwHFukvtUlk/mGQnd//CPV6HuHDrdlXXkUJIiMYiQWRNkmaEZuVGiocO0zJNkx9TMjgm7i5WsEZlCRE3FappNASPZOWxCBG4AOQMB9bL84w3aZppikFwM6H3j2El3+ro/uoiTOQvkdfroMWJLH0F1x2/NRUEJt+BsQf4/D6V88Hdva3hlSQNSp1lCd6ErpuvrV/ul+KnOXeJnjvb25Z/8zs88GFDdGbpryH0sGf0zqIYygV8wS0wTZ4O3dtSv1p2nzp3lt39XMK2nJPkUlWz/2RCJ3KvrUsTvgoIq4mziqjMnjDlcFcmhmBNEnGF6TQGp990JcaFbMj5+wp9Jj2xv7IT1K/1SFuwQbJh3euuirTTau0blGArIL4FLsmEzTrl/suWvMP4qi7KvwxLTvkDKVK2SQYUIrxNz8wijkpxXNVaUV68ioVPXDVumxhDNU/M9x6yiXpHPUp+hoSzP3cgvafXm3D6dYQK4T/pnwy44QFtxm4TftxLFIZcMI++psEiTIlwx5GLISFtWU5XtmdUj2KeoPtiU5DMbrfjC04745hqeqM0PZFzLqr0zssY3ZDYjz8BS2CO05DdNgvSVcUafyM7v7Y9KXYlwlH1dLOX7q/uXocmuPcDyVNKe0d1r4And7pDlmJZSEMwfZhCDaJIDEcC9XAYiuKqoyXvEDrbZfO8aNV9SSzwchTIa9gNa28a+8PU/OsW++RiThx5uuiVW3azt6P7+OxFhxHaHdcJpc8i3UUQoMmsq5HKeDPaLp5pLz1t54saJiw+nmkea3eoAdz9IElvn5fw7Qvk/jh5pwt+Q2SNxHu+BF8C3kM+E4bRODWmJJ4wSoYry9gKyo4T2NDW/LmUs0JkjzoMgC21mx7t6fFSiLSFjnCTg9iDR2GMQjfXnOpKt6J1mTaC+a6+2V0xBc5asSIjw8tXYyssLiJ4o2rBGz7MTMBuaveBTQe8gmajL37+P33N26w57cRYjmQWmy7wMuQjkgqbw+p5BLck0GE7qtIyb6QMRe4Qq10sjH++D1mHPTiMRpd2jzM2eRpwcqAxbWU0GWHbzHRWG/9Z9cBA8hq8CCRdjaFmtHnUEIkenR86I8SVYpJLLzyyF44ZqOcAA" alt="下雪头像"><div><div class="name-row"><h1>下雪</h1><span class="verified">个人名片</span></div><p class="hero-sub">支付与联系，一页轻松抵达</p></div></div><div class="env-bar" aria-live="polite"><div><div class="env-title">当前打开环境</div><div class="env-value" id="envValue">正在检测…</div></div><span class="env-dot" aria-hidden="true"></span></div></header><div class="section-head"><div><h2>选择服务</h2></div><p id="recommendText">正在匹配推荐方式</p></div><section class="grid" id="serviceGrid" aria-label="支付和好友入口"><article class="service-card mint" data-service="wechat-pay" id="wechat-pay"><div class="card-top"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.8 5.2C4.6 5.2 2 7.3 2 9.9c0 1.5.9 2.9 2.3 3.8l-.6 2.2 2.5-1.3c.5.1 1 .2 1.6.2 3.2 0 5.8-2.1 5.8-4.9S11 5.2 7.8 5.2Z"/><path d="M13.8 9.4c3.3 0 6.2 2.2 6.2 5 0 1.5-.8 2.9-2.3 3.8l.5 2-2.3-1.2c-.7.2-1.3.3-2.1.3-3.3 0-6-2.2-6-4.9 0-.2 0-.4.1-.6"/><path d="M6.2 9.3h.01M9.3 9.3h.01M12.3 14h.01M15.8 14h.01"/></svg></div><span class="tag default">二维码</span><span class="tag recommend">当前推荐</span></div><h3>微信支付</h3><p class="desc">微信内长按识别收款码；另提供付款口令作为备用方式。</p><div class="account">收款人：下雪</div><div class="actions"><button class="btn primary" type="button" id="openWechatPay">打开微信付款</button><button class="btn secondary" type="button" id="wechatCodeButton">复制口令并打开微信</button></div></article><article class="service-card sky" data-service="alipay" id="alipay"><div class="card-top"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M7 8h10M9 5.8v4.4c0 3.5-1.3 6.1-3.2 7.7M8.4 12.2c2.7 2.1 5.7 3.6 9.6 4.5M10.8 11.5h6.8"/></svg></div><span class="tag default">直接跳转</span><span class="tag recommend">当前推荐</span></div><h3>支付宝付款</h3><p class="desc">普通浏览器或支付宝内可直接打开；微信内会提示切换浏览器。</p><div class="account">收款人：下雪工作室</div><div class="actions"><button class="btn primary" type="button" id="openAlipay">打开支付宝付款</button><button class="btn secondary" type="button" data-qr="alipay">查看支付宝二维码</button></div></article><article class="service-card peach" data-service="wechat-friend" id="wechat-friend"><div class="card-top"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.8 18c.6-3 2.4-4.6 5.2-4.6s4.6 1.6 5.2 4.6M17.5 8.5v6M14.5 11.5h6"/></svg></div><span class="tag default">名片码</span><span class="tag recommend">当前推荐</span></div><h3>添加微信好友</h3><p class="desc">微信好友不使用网页跳转，直接长按识别个人二维码添加。</p><div class="account">微信号：srhovo</div><div class="actions"><button class="btn primary" type="button" id="openWechatFriend">打开微信添加好友</button><button class="btn secondary" type="button" data-copy="srhovo" data-success="微信号已复制">复制微信号</button></div></article><article class="service-card lilac" data-service="qq" id="qq"><div class="card-top"><div class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16.7c-1.1 1.4-2.5 2-4 1.8.3-1 .8-2.2 1.6-3.4C4.9 14 4.6 12.6 5 11.4c.4-1.3 1.4-2.2 2.7-2.6C8 5.7 9.6 4 12 4s4 1.7 4.3 4.8c1.3.4 2.3 1.3 2.7 2.6.4 1.2.1 2.6-.6 3.7.8 1.2 1.3 2.4 1.6 3.4-1.5.2-2.9-.4-4-1.8-1.1.9-2.4 1.3-4 1.3s-2.9-.4-4-1.3Z"/><path d="M9.3 10h.01M14.7 10h.01M9 14c1.7 1.1 4.3 1.1 6 0"/></svg></div><span class="tag default">可跳转</span><span class="tag recommend">当前推荐</span></div><h3>添加 QQ 好友</h3><p class="desc">优先尝试唤起 QQ 个人资料或加好友页面，二维码作为兼容兜底。</p><div class="account">QQ：2406048740</div><div class="actions"><button class="btn primary" type="button" id="openQQ">打开 QQ 添加好友</button><div class="btn-row"><button class="btn secondary" type="button" data-qr="qq">查看二维码</button><button class="btn secondary" type="button" data-copy="2406048740" data-success="QQ号已复制">复制 QQ 号</button></div></div></article></section><aside class="note-card"><strong>使用提示</strong><p>微信外点击微信项目时，页面会先复制所需内容并尝试唤醒微信；若未成功，将自动显示操作引导与二维码兜底。支付宝在微信内可能被限制，请按页面引导使用系统浏览器打开。</p></aside><footer class="footer">toolboxpay · 下雪支付与个人名片<br>本页面不会收集或上传访问信息</footer></main><section class="sheet" id="qrSheet" role="dialog" aria-modal="true" aria-labelledby="qrTitle" hidden><div class="sheet-panel"><div class="sheet-head"><div class="sheet-title"><h2 id="qrTitle">二维码</h2><p id="qrSubtitle">长按图片识别</p></div><button class="close" type="button" data-close="qrSheet" aria-label="关闭">×</button></div><div class="qr-wrap"><img class="qr-image" id="qrImage" src="" alt="二维码"></div><div class="sheet-foot"><p class="sheet-hint" id="qrHint">请长按图片并选择识别二维码。</p><button class="btn" type="button" data-close="qrSheet">完成</button></div></div></section><section class="sheet" id="wechatGuide" role="dialog" aria-modal="true" aria-labelledby="wechatGuideTitle" hidden><div class="sheet-panel"><div class="sheet-head"><div class="sheet-title"><h2 id="wechatGuideTitle">需要在微信中完成</h2><p id="wechatGuideSubtitle">已尝试唤醒微信</p></div><button class="close" type="button" data-close="wechatGuide" aria-label="关闭">×</button></div><div class="guide-body"><p class="guide-lead" id="wechatGuideLead">若微信没有自动打开，请按以下步骤继续。</p><div class="steps"><div class="step"><div class="step-num">1</div><div><h3 id="wechatStepOneTitle">所需内容已复制</h3><p id="wechatStepOneText">无需再次长按复制。</p></div></div><div class="step"><div class="step-num">2</div><div><h3>打开微信</h3><p>可点击下方按钮再次发起打开微信请求。</p></div></div><div class="step"><div class="step-num">3</div><div><h3 id="wechatStepThreeTitle">在微信中粘贴并打开</h3><p id="wechatStepThreeText">粘贴到文件传输助手或聊天窗口后继续。</p></div></div></div><div class="guide-actions"><button class="btn" type="button" id="retryWechat">再次打开微信</button><button class="btn" type="button" id="wechatGuideQr">直接查看二维码</button></div></div></div></section><section class="sheet" id="alipayGuide" role="dialog" aria-modal="true" aria-labelledby="guideTitle" hidden><div class="sheet-panel"><div class="sheet-head"><div class="sheet-title"><h2 id="guideTitle">在浏览器中打开支付宝</h2><p>微信内可能阻止支付宝链接</p></div><button class="close" type="button" data-close="alipayGuide" aria-label="关闭">×</button></div><div class="guide-body"><p class="guide-lead">当前检测到微信内置浏览器。为避免进入微信拦截页面，建议先切换到系统浏览器，再点击支付宝付款。</p><div class="steps"><div class="step"><div class="step-num">1</div><div><h3>点击右上角“…”</h3><p>打开微信网页菜单。</p></div></div><div class="step"><div class="step-num">2</div><div><h3>选择“在浏览器打开”</h3><p>iPhone 使用 Safari，安卓使用系统浏览器或 Chrome。</p></div></div><div class="step"><div class="step-num">3</div><div><h3>再次点击支付宝付款</h3><p>页面会自动保留支付宝为优先入口。</p></div></div></div><div class="guide-actions"><button class="btn" type="button" id="copyAlipayLink">复制支付宝链接</button><button class="btn" type="button" data-close="alipayGuide">我知道了</button></div></div></div></section><div class="toast" id="toast" role="status" aria-live="polite">已复制</div><script>(() => {
+'use strict';
+const ALIPAY_URL = 'https://qr.alipay.com/fkx15742psqs0wkwddiw301';
+const QQ_URL = 'https://qm.qq.com/q/QHR6KnVks0';
+const WECHAT_SCHEME = 'weixin://';
+const WECHAT_CODE = '#付款:下雪(srhovo)/MARSCONCERT/001';
+const PUBLIC_PAGE_URL = 'https://srhovo.github.io/toolboxpay/';
+const QR_DATA = {
+'wechat-pay': {
+title: '微信支付',
+subtitle: '下雪 · 微信收款码',
+hint: '请在微信内长按图片，选择“识别图中二维码”后付款。',
+image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsQAAALEAQAAAAAnLhsuAAAFIElEQVR42u2dTa4rKQxG7dabUzu4+19WdgArcA8MxpDojfpKrfiUoqhSoc6AwSf/oya/c41/5LcuyJAhQ4YMGTJkyJAhQ4YMGTJkyJAhQ/4vyEPjkqEioqr6iKqKiD4iQ/3bF/uC+Ot4nX2GDPnLyWJ+9eNGROJG2ky5WJ/r46E/icUnh32GDLkAeSxrwc2JH9NHrC+56KKPmJmqhlxIsykj+XX2GTLkguRm2ZxQ1bAxXDTCYXFfJgwS9hky5BrkPx+ejcfGjHKYiInosiimeojYeKR1GY8vYJ8hQy5KDqfD7Y1mZqY/liMb4aHoj+UY6e2zsM+QIdcgz3TIM/Mj9trfUzqWUFgXe6UoR/gs/jr7DBlyET/lPUbRTJppMxHRZrrW+I36vy44Kx7CPkOGXIO80qbrEkl52PWRZjnl6i7Jnb2ND3lYyJDL6Eb8DHGY+tC3+WFmEf04IF0OGUE3IEOuQB46pWCkwMVyWMzMXrtGVMYOevgnwqTUi0KGXMje6Mf9tDdCNLx2tN3LsqWxqz6wNyBDLuWnNNsxiss9icVJVa77rTPoBmTIZfwUe6n+WDgdnm+d3oebE0Oz/yJeyCHLVTkWsM+QIX8rOeVhc6+rbD9Fhrq1YUsT1BcPNbc0PDaylrHPkCEXim+sdMndFdvP3EokU1oqLl0/yadAhlzI3ljmhC2zQb0zxdVg2SGW069pva313rHCPkOGXMLeSAHPXdnV9xSOq64j129c72JvQIZczk85MyNTMVKBaC4Gu76Z2wMZcjndyGO7cmdrS1XoLZWV5gKPnMZFNyBDLuOnyDkJ8IiIZrsivBKRWPapeIx9hgz5+8k7djHU6zF8TmD2WSTGEf+cSddVeZ7iHuwzZMg14ht9+ybhdFwjiP/S3XYC2WfIkEuQffLwHNEz5jEH9tJdm9GXdZE9lNSikgIj7DNkyN8f39ih0b7dluv50ZBidkc5Ov0pkCGXI+c22HnWkqaoRSRTXuoL9jDzyK286E+BDLlQfOPIklxlYOf6nHvN/5JPgQy5oG6ELHycBChXs3y/Z3SIMCcQMuRa8Y1sMOSpgO+DOOL5kXAx5vZAhlxPNy4zIzQkrpYqvk5huW0PdAMy5Dr2Ri7kaKfVkWs2zpOmc3k59gZkyKV048MAQJHDqEjn1F8dcGGBoBuQIdfSDbujnVlDPtZvXC205FMgQy6oGznymQtBc4PbMY7j6qw/IiTsM2TIVfyUK0uyO1DaMfBc5G5dOWo/0A3IkCuQxzoSupl3wsbzKQ6v8zymZl5K6mfW5yQL+wwZch174yjVkKQD7UPNRjgsxwIhDwsZciXdyO5JPmipvw0GbEcoY9ecNyO+ARlyRXvjvYpD7mHF8tYJe48yRjcgQ66jG4eXcY4VlWPmcM6t5NIvoT8FMuRiforIPX7nPmNadvQjS83Hv9ANyJAr2BtX6dfHE9xuf6TLu8KgG5Ahl7I34sltSOSJXim3sjMsXfBTIEMuqBt3J2zfGnKcgHA9OUOp+CmQIdfSjWQw3LPN5R4FdgRC+7ZJ0A3IkMuS95jQ6+h5mTNFrc/h51FZeqsN+wwZ8teS/3x8qs3mefR+5IEfNz/UxuMH0KuItC7jsfGsV7r4c/YZMuQ6upGPmE83Gprg9kYzGY/JPEVF462h0nrICPsMGXIF3dDD3ujLxnhMxJbVMU+BXNIxVcKlYysG+wwZ8neT1X4JPNhnyJAhQ4YMGTJkyJAhQ4YMGTJkyJAh/z/J/wKxxE7NE8kQ9QAAAABJRU5ErkJggg=='
+},
+'alipay': {
+title: '支付宝付款',
+subtitle: '下雪工作室 · 支付宝收款码',
+hint: '可使用支付宝扫码；普通浏览器也可返回页面点击“打开支付宝付款”。',
+image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmQAAAJkAQAAAACXagARAAAEBElEQVR42u2dS44sKQxFr1s9J3ZQ+19W7QBW4B4YzKdyWMF7ap1QKkSSEWeQ6MofDJjr9672j37zggYNGjRo0KBBgwYNGjRo0KBBg/b30ZrlpWbxNTuzxx71/md/hVGABu1F2r/Z6onf9khS8Wi4pPZYcZNcsmYq1YqrmR+vMArQoF2gtWEZi9sjFY9OSV7lVWam4tFjz/4KowAN2mVas7zbl3dVFk+RdoPL/wYN2nW/9+Pl4d+GVZW8PSp1OsmMAjRol3W6mEiXrLjyHgod1taj54NVZRSgQXuX1lO3I/D0b5PU71VrrKpm0bO9wihAg/a2PV0tY3GTTLLi+fn566cQlVGABu0Nmny5VNzr6KnqX+vuEscDVe6eAh+vMArQoL1Ja919tS/Pkobu7hY/G5kQjgzwVDGjAA3am35vXs1U3EpVJova4/EZ7m64xNHQlvtlFKBBe5nWbA1Us9TBnl7VYGbubmbdGR71D4wCNGiX4tMRhM6Gj/vo7zFpWXrOkJZRgAbtZZ1GBBoJpdVWZqaoTmubst0udAoN2qu0EOP3WB1TPNzddGuzjjdsaNQTdq+Y9TLQoN2xp8O/nd6vZoK3W9J8YJmvSfcYewoN2mu0bV1bX7nWLWxVJHjz12auJd1EvhcatMu01heD9+qF9IGLex3O7TFbGgtqWCcODdo1v7eOduZ1tdQjLWmlnuN1337F74UG7U58Or5OMVblfZt/WaRK3SA0aDd1moW707Cmfpfk0irPTmD+FBq0y37v4fGW09pOU7s7w+gUGrRLOj2i1LrVM6R+e8On64tOoUG7FJ8WP6sE055miLrMlm6RKTqFBu2OTrWkeY/GXs07r8w1oVNo0K74vWt90arHn6ngNL5rA51Cg3YnPk3TGVKdvm7xI1Cduz0462WgQbtoT903k5oGdCl1mOIdWt5MKjqFBu3t+HSZFT0mZabdrFojWda1QYN2WadrScNqVdeU73R6tdlWdAoN2iW/t25Lwo95mfMB31eUo1No0F6knfv3umSl9s17l+f6Rr6xGX4seStVubkZowAN2h17ehQHarenvnm/c9amrhBGARq01+PTU4z+aZlMPXdMwu+FBu2aPf2p3LXcqPvG5UPpL/My0KBdik/3w8EjAl0PDff2eA9OfQtp28O+K9Cg3aOth4M3i121VbzvQCgpjxGPtpk9yo0HGQVo0K7SlvMTuzCLH+ctxtdwfTlXERq0P0CL4yq+ZhIp9zfbSge9n2oRyuV/gwbtQnx6nGfadwEdp0HZOGTcSrVS1czbM8+EYhSgQbuiU9tMarVle16TvD1WXEO8Cs0282aMAjRoL9PMfxHWGAVo0KBBgwYNGjRo0KBBgwYNGrT/K+0/kYe6hAVAAWUAAAAASUVORK5CYII='
+},
+'wechat-friend': {
+title: '添加微信好友',
+subtitle: '下雪 · 微信号 srhovo',
+hint: '请在微信内长按图片，选择“识别图中二维码”添加好友。',
+image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmQAAAJkAQAAAACXagARAAAD8klEQVR42u2dy43sOAxFyYfZyxlU/mF1BlIEnAX1IeVatjSDh2MYDbtsn0UTF/yIktTk9472R37zgAYNGjRo0KBBgwYNGjRo0KBBg/b/ozWdh/+gz/jbdN3Gd16fYAVo0M7QxPyo4aKKmYmIFLMaXqsiIlZFivmj17dYARq0w7Q2PGMxVTUz96SuXH1EP+YitSr2o+kTrAAN2n1aMWnaXedwrH6rj6iqfoz/GzRot2j/fA+G23Cs3dU+tv6qtQcrQIP239CK9bS0qX7MPannne5e/VG6nZ9gBWjQrtB66fYREbEftR+VFs6QxvaQOH+CFaBBOx73lpRv6ox4RdTP8YuOc/sEK0CDdow2hlTGCMvUrMe3Pe71N8f4S49464h7izEuAw3aHZ1O6c3ffZy0j5YOPaanQdToFBq0S/40FoVcgFszQ01NDt2T0ucADdodnfrwaCjwzhh4ticlqcor6EWn0KBd0GkOfdeITKgXLRVbeIe4Fxq0a/np63qGtdN1ulddKWoMjNEpNGjnaVbDdJhifVS09RbBPq46Y+MqqqOxsDFfBhq0o7TVN6giHuBqqdLU/CymTU3ExlNvJrQQDCtWgAbtbn66BbQrOY0XYYB1jtoQ90KDdjU/ralxN9Z747TTb2LHCtCgnc9PH5n99rPlXp+enLob7bezIT9UlrACNGin/WkcG439DK7QFAwPXb8WdsAK0KAdj3vnfPCtpWEOre4dEXWTOVaABu28P42CDY1J81yNECUIFn8KDdodndaYZn5xl3spOLyPTqFBu+dPq2zd+GuNwVkNju2FMW9Fp9CgXaHpx7zMq8/qONKn14F7NbjsE2qmirECNGjHaKsfyXzRhmI6+wBLXY9cy+O2/z7WNDOsAA3alfx0lYxiEjrKSnvht65viXuhQbuWn671GcqSbYpyw6wZieOnjMtAg3ZNp7lwtIrAYRQm7l7xpQCFTqFBOxz3xonhcbmVuLhKnJGaVkZCp9CgXaAVm0v1+t4xs9e3337Mr8NqvWJV8uq+WAEatLNx75rIFhYSTKuWpSEY2Se14U+hQTsf96Yj136TKkd+ut5Ep9CgXfOnr7rQVj7a2/XfNSV0Cg3aLX+69QpKXNshu9Q0uQadQoN2XqdpP/GapsyIpFVZ9mW36XOABu2aToOXXF41xr1V9qR1m1aDTqFBu6bTvJVM7LePa3G/F9xGp9CgnaF9309cmkqpNq9FrD0a1T1e0FKxAjRo93Qa96foCn2kVC3mYrT2WN78VKeWsQI0aFd0qvmBi3FOZItbFUup0h53tSZr+htWgAbtDE3tF2ENK0CDBg0aNGjQoEGDBg0aNGjQoP2ttH8B1Fp4A+KDwsQAAAAASUVORK5CYII='
+},
+'qq': {
+title: '添加 QQ 好友',
+subtitle: '下雪 · QQ 2406048740',
+hint: '可使用 QQ 扫码添加；也可返回页面尝试直接打开 QQ。',
+image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgQAAAIEAQAAAABOeQs7AAAC40lEQVR42u2dQW7rMAxEhx/dSzfI/Y+VG0gnmL8gTdFOdkU30hhFkTjqWxAZkOLQqhG/u+Y//PYSQQQRRBBBBBFEEEEEEUQQQYTdCdPyAmBmmOY3MQ2A9bhZlymSImxPoF8DANBoHWgkaR0uDTQ+lymSImxPmCULTOOApwwOWMcSQl2mSIqwJ+Hn6103NazRrjSB2RVJEY4mTMO0qJoGfHMR6lAkRTgtX+Q3vxGNmJ0z6iVOQxucRnwKRJEUYWdCtJn6lS9cESM23Xzbc5kiKcK2BPtSHs0OgP67Lm3jW9GlSIqwNWFGsrAOkpks0sLge71WJEXYmnD5EWRsHNplTzTWrbcrJV40cqSRoUiKsLUuXBQjpBG6uNSRn6apJ12IsC/hJ/cUy7Pw7pOrZhpr4VQdDUVShAMI3mXi2zx3xKBUDznE/qIa34qkCNvnC289TWOjtYFpBOwaizIA2YySfyHCOYRGM7MXPU34TBTSvyhzg2uMUJEU4QwC34bGtPBytjYatv2quG7SUCRF2I9Q5sbbatWiNGazK5UyCbGoHyXC9rrgrUObfdrQSxUIsMwL6UKEA3ThP49P0+mry5QvRDinjrpphExdrBwx7lKSLkTYXRf5zc/aaRVR7VZc3Uop6UKEDQnLvzAgvWz3uA1IIyPsb7c5boO1iqQIW+8vMllcu+xaUK23mVaUL0Q4QBfrbVFH1UItqLS/EOEIwjT/8q+zPhrD9Y7HWs2XxXFSOj9KhHPqKN5assvCq7XTuGcN5QsRts4XHwcJhp0RYyGz/AZ0rpoIWxPu87QAZkejteECYKP5uOBHt4qKpAgH6ALloANvxroW/HgcpjRCIEORFOEsgh+/+Tavo+xFe9EPQ1gPd6uOEuGQfPG4GjNB5KOs5olDz7GKsDkBjx7UmozK+cDiXzyWqR8lwva6qHfy/jrbP5u39a+kCxH2JJj+H6sIIogggggiiCCCCCKIIIIIIvwZ4T8RbdRpoQ/xPAAAAABJRU5ErkJggg=='
+}
+};
+const ua = navigator.userAgent || '';
+const environment = /MicroMessenger/i.test(ua) ? 'wechat'
+: /AlipayClient/i.test(ua) ? 'alipay'
+: /\bQQ\//i.test(ua) ? 'qq'
+: /MQQBrowser/i.test(ua) ? 'qqbrowser'
+: 'browser';
+const isMobile = /Android|iPhone|iPad|iPod/i.test(ua);
+const WECHAT_ACTIONS = {
+'wechat-pay': {
+title: '在微信中完成付款',
+subtitle: '已复制 toolboxpay 页面链接',
+lead: '页面已尝试唤醒微信。打开微信后，将已复制的页面链接粘贴到文件传输助手或任意聊天窗口，再点击进入本页并长按收款码。',
+stepOneTitle: '页面链接已复制',
+stepOneText: '链接指向 toolboxpay 的微信支付入口。',
+stepThreeTitle: '粘贴链接并打开',
+stepThreeText: '进入页面后长按微信收款码，选择“识别图中二维码”。',
+qr: 'wechat-pay'
+},
+'wechat-friend': {
+title: '在微信中添加好友',
+subtitle: '已复制 toolboxpay 页面链接',
+lead: '页面已尝试唤醒微信。打开微信后，将已复制的页面链接粘贴到文件传输助手或任意聊天窗口，再点击进入本页并长按名片码。',
+stepOneTitle: '页面链接已复制',
+stepOneText: '链接指向 toolboxpay 的微信好友入口。',
+stepThreeTitle: '粘贴链接并打开',
+stepThreeText: '进入页面后长按微信名片码，选择“识别图中二维码”。',
+qr: 'wechat-friend'
+},
+'wechat-code': {
+title: '在微信中使用付款口令',
+subtitle: '微信付款口令已复制',
+lead: '页面已尝试唤醒微信。打开微信后，将付款口令粘贴到聊天窗口并发送，再点击微信识别出的付款内容。',
+stepOneTitle: '付款口令已复制',
+stepOneText: WECHAT_CODE,
+stepThreeTitle: '粘贴口令并发送',
+stepThreeText: '微信识别出付款内容后，点击进入付款流程。',
+qr: 'wechat-pay'
+}
+};
+const ENV_INFO = {
+wechat: { label: '微信内置浏览器', recommend: '已优先排列微信相关入口', order: ['wechat-pay','wechat-friend','alipay','qq'] },
+alipay: { label: '支付宝内置浏览器', recommend: '已优先排列支付宝付款', order: ['alipay','wechat-pay','qq','wechat-friend'] },
+qq: { label: 'QQ 内置浏览器', recommend: '已优先排列 QQ 好友入口', order: ['qq','wechat-friend','alipay','wechat-pay'] },
+qqbrowser: { label: 'QQ 浏览器', recommend: '已优先排列 QQ 好友入口', order: ['qq','alipay','wechat-friend','wechat-pay'] },
+browser: { label: '系统或普通浏览器', recommend: '支付宝直达与 QQ 跳转可优先使用', order: ['alipay','qq','wechat-pay','wechat-friend'] }
+};
+const info = ENV_INFO[environment];
+const grid = document.getElementById('serviceGrid');
+const envValue = document.getElementById('envValue');
+const recommendText = document.getElementById('recommendText');
+const toast = document.getElementById('toast');
+let toastTimer = 0;
+let activeSheet = null;
+let closeTimer = 0;
+let pendingWechatAction = 'wechat-pay';
+envValue.textContent = info.label;
+recommendText.textContent = info.recommend;
+document.documentElement.dataset.environment = environment;
+const requested = new URLSearchParams(location.search).get('to');
+const alias = { wechat: 'wechat-pay', 'wechatpay': 'wechat-pay', 'wxpay': 'wechat-pay', wx: 'wechat-friend', 'wechat-friend': 'wechat-friend', alipay: 'alipay', qq: 'qq' };
+const target = alias[(requested || '').toLowerCase()] || '';
+const order = target ? [target, ...info.order.filter((item) => item !== target)] : info.order;
+order.forEach((service, index) => {
+const card = grid.querySelector(`[data-service="${service}"]`);
+if (!card) return;
+grid.appendChild(card);
+if (index === 0) card.classList.add('is-recommended');
+});
+if (target) {
+const card = document.querySelector(`[data-service="${target}"]`);
+if (card) {
+card.classList.add('is-target');
+recommendText.textContent = `已定位到${card.querySelector('h3').textContent}`;
+requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+}
+}
+function showToast(message) {
+toast.textContent = message;
+toast.classList.add('show');
+clearTimeout(toastTimer);
+toastTimer = setTimeout(() => toast.classList.remove('show'), 1700);
+}
+function legacyCopy(text) {
+const area = document.createElement('textarea');
+area.value = text;
+area.setAttribute('readonly', '');
+area.style.position = 'fixed';
+area.style.left = '-9999px';
+document.body.appendChild(area);
+area.select();
+let ok = false;
+try { ok = document.execCommand('copy'); } catch (_) {}
+area.remove();
+return ok;
+}
+async function copyText(text, successMessage = '已复制', notify = true) {
+let ok = false;
+if (navigator.clipboard && window.isSecureContext) {
+try { await navigator.clipboard.writeText(text); ok = true; } catch (_) {}
+}
+if (!ok) ok = legacyCopy(text);
+if (notify) showToast(ok ? successMessage : '复制失败，请长按文字手动复制');
+return ok;
+}
+function copyForAppLaunch(text) {
+const copied = legacyCopy(text);
+if (!copied && navigator.clipboard && window.isSecureContext) {
+navigator.clipboard.writeText(text).catch(() => {});
+return true;
+}
+return copied;
+}
+function openSheet(id) {
+clearTimeout(closeTimer);
+if (activeSheet && activeSheet.id !== id) closeSheet(activeSheet.id, true);
+const sheet = document.getElementById(id);
+if (!sheet) return;
+sheet.hidden = false;
+document.body.classList.add('sheet-open');
+activeSheet = sheet;
+requestAnimationFrame(() => sheet.classList.add('show'));
+}
+function closeSheet(id, immediate = false) {
+const sheet = document.getElementById(id);
+if (!sheet) return;
+sheet.classList.remove('show');
+const finish = () => {
+sheet.hidden = true;
+if (activeSheet === sheet) activeSheet = null;
+if (!activeSheet) document.body.classList.remove('sheet-open');
+};
+if (immediate) finish(); else closeTimer = setTimeout(finish, 240);
+}
+function openQr(key) {
+const data = QR_DATA[key];
+if (!data) return;
+document.getElementById('qrTitle').textContent = data.title;
+document.getElementById('qrSubtitle').textContent = data.subtitle;
+document.getElementById('qrHint').textContent = data.hint;
+const image = document.getElementById('qrImage');
+image.alt = `${data.title}二维码`;
+image.src = data.image;
+openSheet('qrSheet');
+}
+function getWechatPageUrl(action) {
+const target = action === 'wechat-friend' ? 'wechat-friend' : 'wechat-pay';
+if (/^https?:$/i.test(location.protocol)) {
+const url = new URL(location.href);
+url.searchParams.set('to', target);
+url.hash = '';
+return url.toString();
+}
+return `${PUBLIC_PAGE_URL}?to=${encodeURIComponent(target)}`;
+}
+function prepareWechatGuide(action) {
+const data = WECHAT_ACTIONS[action] || WECHAT_ACTIONS['wechat-pay'];
+pendingWechatAction = action;
+document.getElementById('wechatGuideTitle').textContent = data.title;
+document.getElementById('wechatGuideSubtitle').textContent = data.subtitle;
+document.getElementById('wechatGuideLead').textContent = data.lead;
+document.getElementById('wechatStepOneTitle').textContent = data.stepOneTitle;
+document.getElementById('wechatStepOneText').textContent = data.stepOneText;
+document.getElementById('wechatStepThreeTitle').textContent = data.stepThreeTitle;
+document.getElementById('wechatStepThreeText').textContent = data.stepThreeText;
+}
+function requestWechatOpen(action, copyValue, successMessage) {
+prepareWechatGuide(action);
+const copied = copyForAppLaunch(copyValue);
+showToast(copied ? `${successMessage}，正在尝试打开微信` : '复制失败，正在尝试打开微信');
+if (!isMobile) {
+openSheet('wechatGuide');
+return;
+}
+let switchedAway = false;
+const markHidden = () => { if (document.hidden) switchedAway = true; };
+const markPageHide = () => { switchedAway = true; };
+document.addEventListener('visibilitychange', markHidden);
+window.addEventListener('pagehide', markPageHide, { once: true });
+window.setTimeout(() => {
+document.removeEventListener('visibilitychange', markHidden);
+if (!switchedAway && document.visibilityState === 'visible') openSheet('wechatGuide');
+}, 1450);
+location.href = WECHAT_SCHEME;
+}
+function retryWechatOpen() {
+if (!isMobile) {
+showToast('当前设备无法直接唤醒手机微信');
+return;
+}
+showToast('正在再次尝试打开微信');
+location.href = WECHAT_SCHEME;
+}
+function configureWechatButtons() {
+const payButton = document.getElementById('openWechatPay');
+const friendButton = document.getElementById('openWechatFriend');
+const codeButton = document.getElementById('wechatCodeButton');
+if (environment === 'wechat') {
+payButton.textContent = '查看微信收款码';
+friendButton.textContent = '查看微信名片码';
+codeButton.textContent = '复制付款口令';
+}
+}
+document.querySelectorAll('[data-copy]').forEach((button) => {
+button.addEventListener('click', () => copyText(button.dataset.copy || '', button.dataset.success || '已复制'));
+});
+document.querySelectorAll('[data-qr]').forEach((button) => {
+button.addEventListener('click', () => openQr(button.dataset.qr));
+});
+document.querySelectorAll('[data-close]').forEach((button) => {
+button.addEventListener('click', () => closeSheet(button.dataset.close));
+});
+document.querySelectorAll('.sheet').forEach((sheet) => {
+sheet.addEventListener('click', (event) => { if (event.target === sheet) closeSheet(sheet.id); });
+});
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && activeSheet) closeSheet(activeSheet.id); });
+configureWechatButtons();
+document.getElementById('openWechatPay').addEventListener('click', () => {
+if (environment === 'wechat') {
+openQr('wechat-pay');
+return;
+}
+requestWechatOpen('wechat-pay', getWechatPageUrl('wechat-pay'), '页面链接已复制');
+});
+document.getElementById('openWechatFriend').addEventListener('click', () => {
+if (environment === 'wechat') {
+openQr('wechat-friend');
+return;
+}
+requestWechatOpen('wechat-friend', getWechatPageUrl('wechat-friend'), '页面链接已复制');
+});
+document.getElementById('wechatCodeButton').addEventListener('click', () => {
+if (environment === 'wechat') {
+copyText(WECHAT_CODE, '微信付款口令已复制');
+return;
+}
+requestWechatOpen('wechat-code', WECHAT_CODE, '微信付款口令已复制');
+});
+document.getElementById('retryWechat').addEventListener('click', retryWechatOpen);
+document.getElementById('wechatGuideQr').addEventListener('click', () => {
+const data = WECHAT_ACTIONS[pendingWechatAction] || WECHAT_ACTIONS['wechat-pay'];
+closeSheet('wechatGuide', true);
+openQr(data.qr);
+});
+document.getElementById('openAlipay').addEventListener('click', () => {
+if (environment === 'wechat') {
+openSheet('alipayGuide');
+return;
+}
+location.assign(ALIPAY_URL);
+});
+document.getElementById('copyAlipayLink').addEventListener('click', () => copyText(ALIPAY_URL, '支付宝链接已复制'));
+document.getElementById('openQQ').addEventListener('click', () => location.assign(QQ_URL));
+})();</script></body></html>
